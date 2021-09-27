@@ -3,20 +3,18 @@ import PropTypes from 'prop-types';
 
 import memberReducer from '../reducers/memberReducer';
 
+import Storage from '../tools/Storage';
+
 export const MemberContext = createContext();
 
 const MemberProvider = ({ children }) => {
-  const [member, dispatch] = useReducer(memberReducer, null, () => {
-    const localData = localStorage.getItem('member');
-
-    return localData ? JSON.parse(localData) : null;
-  });
+  const [member, dispatch] = useReducer(memberReducer, null, () => Storage.getData('member'));
 
   useLayoutEffect(() => {
-    if (member) {
-      localStorage.setItem('member', JSON.stringify(member));
+    if (!member) {
+      Storage.removeData('member');
     } else {
-      localStorage.removeItem('member');
+      Storage.setData('member', member);
     }
   }, [member]);
 

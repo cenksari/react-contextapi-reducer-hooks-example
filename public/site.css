@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+html,
+body,
+div,
+p,
+span,
+input,
+select,
+textarea,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+header,
+footer,
+section,
+nav {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 1em;
+  font-weight: 300;
+  appearance: none;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  color: #abb2bf;
+  line-height: 160%;
+  background-color: #282c34;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #21252b;
+  justify-content: space-between;
+}
+
+.member-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-area span {
+  color: #ffffff;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.site {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+.button {
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+  display: inline-block;
+  transition: ease 1s all;
+}
+
+.button.white {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.button.white:hover,
+.button.white:active {
+  background-color: #f5f5f5;
+}
+
+.button.normal {
+  padding: 10px 30px;
+}
+
+.form {
+  width: 400px;
+  margin-top: 20px;
+}
+
+.form-elements {
+}
+
+.form .form-elements .form-line {
+  margin-bottom: 20px;
+}
+
+.form .form-elements .form-buttons .button {
+  width: 100%;
+  display: block;
+}
+
+.form .form-elements .form-line label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form .form-elements .form-line input {
+  width: 100%;
+  padding: 10px;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #21252b;
+  border: 1px solid #222222;
+}
+
+.form .form-elements .form-line input:focus {
+  border: 1px solid #111111;
+}
+
+.error {
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  background-color: rgb(160, 0, 0);
+}

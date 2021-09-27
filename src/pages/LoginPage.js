@@ -1,7 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { MemberContext } from '../contexts/MemberContext';
+import useMember from '../hooks/useMember';
 
 import Header from '../components/Header/Header';
 import Input from '../components/Forms/Input';
@@ -9,7 +9,7 @@ import Button from '../components/Forms/Button';
 
 const LoginPage = () => {
   const history = useHistory();
-  const { dispatch } = useContext(MemberContext);
+  const { addMember } = useMember();
 
   const [error, setError] = useState(null);
   const [formValues, setFormValues] = useState({
@@ -38,7 +38,7 @@ const LoginPage = () => {
     } else if (password === '') {
       setError('Please enter your password.');
     } else {
-      dispatch({ type: 'ADD_MEMBER', payload: { username } });
+      addMember({ username });
 
       history.push('/profile');
     }

@@ -8,7 +8,7 @@ import Storage from '../tools/Storage';
 export const MemberContext = createContext();
 
 const MemberProvider = ({ children }) => {
-  const [member, dispatch] = useReducer(memberReducer, null, () => Storage.getData('member'));
+  const [member, memberDispatch] = useReducer(memberReducer, null, () => Storage.getData('member'));
 
   useLayoutEffect(() => {
     if (!member) {
@@ -18,7 +18,9 @@ const MemberProvider = ({ children }) => {
     }
   }, [member]);
 
-  return <MemberContext.Provider value={{ member, dispatch }}>{children}</MemberContext.Provider>;
+  return (
+    <MemberContext.Provider value={{ member, memberDispatch }}>{children}</MemberContext.Provider>
+  );
 };
 
 MemberProvider.propTypes = {

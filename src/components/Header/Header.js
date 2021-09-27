@@ -1,16 +1,16 @@
-import { memo, useContext } from 'react';
+import { memo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { MemberContext } from '../../contexts/MemberContext';
+import useMember from '../../hooks/useMember';
 
 import Button from '../Forms/Button';
 
 const Header = memo(() => {
   const history = useHistory();
-  const { member, dispatch } = useContext(MemberContext);
+  const { member, removeMember } = useMember();
 
   const logout = () => {
-    dispatch({ type: 'REMOVE_MEMBER' });
+    removeMember();
 
     history.push('/');
   };

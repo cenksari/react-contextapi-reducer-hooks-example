@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { MemberContext } from '../contexts/MemberContext';
+import useMember from '../hooks/useMember';
 
 import Header from '../components/Header/Header';
 import Button from '../components/Forms/Button';
 
 const ProfilePage = () => {
   const history = useHistory();
-  const { member } = useContext(MemberContext);
+  const { member } = useMember();
 
   return (
     <div>

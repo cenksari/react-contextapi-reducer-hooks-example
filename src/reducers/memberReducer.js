@@ -12,7 +12,7 @@ const memberReducer = (state, action) => {
     case REMOVE_MEMBER:
       return null;
     default:
-      return { ...state };
+      throw new Error();
   }
 };
 

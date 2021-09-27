@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { MemberContext } from '../contexts/MemberContext';
+import useMember from '../hooks/useMember';
 
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import ProfilePage from '../pages/ProfilePage';
 
 const Navigation = () => {
-  const { member } = useContext(MemberContext);
+  const { member } = useMember();
 
   return (
     <BrowserRouter>

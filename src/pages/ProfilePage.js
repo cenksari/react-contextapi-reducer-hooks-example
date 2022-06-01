@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import useMember from '../hooks/useMember';
 
@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import Button from '../components/Forms/Button';
 
 const ProfilePage = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { member } = useMember();
 
   return (
@@ -22,7 +22,7 @@ const ProfilePage = () => {
         </div>
 
         <div className='content'>
-          <Button type='button' title='Home page' onClick={() => history.push('/')} />
+          <Button type='button' title='Home page' onClick={() => navigate('/')} />
         </div>
       </section>
     </div>

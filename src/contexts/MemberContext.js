@@ -19,6 +19,7 @@ const MemberProvider = ({ children }) => {
   }, [member]);
 
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <MemberContext.Provider value={{ member, memberDispatch }}>{children}</MemberContext.Provider>
   );
 };

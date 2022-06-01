@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import useMember from '../hooks/useMember';
 
@@ -8,7 +8,7 @@ import Input from '../components/Forms/Input';
 import Button from '../components/Forms/Button';
 
 const LoginPage = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { addMember } = useMember();
 
   const [error, setError] = useState(null);
@@ -40,7 +40,7 @@ const LoginPage = () => {
     } else {
       addMember({ username });
 
-      history.push('/profile');
+      navigate('/profile');
     }
   };
 

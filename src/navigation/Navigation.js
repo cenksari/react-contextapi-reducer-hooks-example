@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import useMember from '../hooks/useMember';
 
@@ -10,16 +10,14 @@ const Navigation = () => {
   const { member } = useMember();
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        {member ? (
-          <Route exact path='/profile' component={ProfilePage} />
-        ) : (
-          <Route exact path='/login' component={LoginPage} />
-        )}
-      </Switch>
-    </BrowserRouter>
+    <Routes>
+      <Route exact path='/' element={<HomePage />} />
+      {member ? (
+        <Route exact path='/profile' element={<ProfilePage />} />
+      ) : (
+        <Route exact path='/login' element={<LoginPage />} />
+      )}
+    </Routes>
   );
 };
 

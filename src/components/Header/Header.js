@@ -1,18 +1,18 @@
 import { memo } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import useMember from '../../hooks/useMember';
 
 import Button from '../Forms/Button';
 
 const Header = memo(() => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { member, removeMember } = useMember();
 
   const logout = () => {
     removeMember();
 
-    history.push('/');
+    navigate('/');
   };
 
   return (
@@ -28,7 +28,7 @@ const Header = memo(() => {
           </div>
         ) : (
           <div className='member-area'>
-            <Button type='button' title='Login' onClick={() => history.push('/login')} />
+            <Button type='button' title='Login' onClick={() => navigate('/login')} />
           </div>
         )}
       </div>
